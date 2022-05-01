@@ -1,0 +1,28 @@
+.container {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border-color: #000;
+  border-width: 1px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  background: blue;
+  color: white;
+  border: none;
+  padding: 1rem;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
