@@ -26,18 +26,22 @@ const fetcher = () => fetch("/api/scores/list").then(response => response.json()
 
 export default function Home() {
   const { data, mutate } = useSWR("scores", fetcher);
-  const [name, setName] = useState("leigth");
-  const [value, setValue] = useState("3.14");
+  const [name, setName] = useState("");
+  const [value, setValue] = useState("");
 
   return <View style={styles.container}>
-    <Text style={styles.heading}>PI Digits</Text>
+    <Text style={styles.heading}>PI Digits - Game</Text>
+    <Text style={styles.contentText}>Who holds the current world record for reciting pi?
+      In 1981, an Indian man named Rajan Mahadevan accurately recited 31,811 digits of pi from memory. In 1989, Japan's Hideaki Tomoyori recited 40,000 digits. The current Guinness World Record is held by Lu Chao of China, who, in 2005, recited 67,890 digits of pi.
+
+    </Text>
 
     <TextInput
-      value={name} onChangeText={(text) => setName(text)}
+      value={name} placeholder="Enter Player Name" onChangeText={(text) => setName(text)}
       style={styles.input} />
 
     <TextInput
-      value={value} onChangeText={(text) => setValue(text)}
+      value={value} placeholder="Enter PI value" onChangeText={(text) => setValue(text)}
       style={styles.input} />
 
     <Button title="Submit"
@@ -54,15 +58,15 @@ export default function Home() {
         mutate();
       }} />
 
-  <Text style={styles.heading}>Scoreboard</Text>
+    <Text style={styles.heading}>Scoreboard</Text>
 
     {data && (
       <FlatList data={data} keyExtractor={(item) => item.name} renderItem={({ item }) => (
         <View>
-           <Text>
-             {item.name} - {item.score}
-           </Text>
-           </View>
+          <Text>
+            {item.name} - {item.score}
+          </Text>
+        </View>
       )} />
     )}
 
@@ -74,5 +78,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: { width: "50% ", marginLeft: "auto", marginRight: "auto" },
   heading: { fontSize: "2rem", marginTop: "1rem", marginBottom: "1rem" },
-  input: { borderColor: "#000", borderWidth: "0.2rem", padding: "1rem", marginBottom: "1rem" }
+  input: { borderColor: "#000", borderWidth: "0.2rem", padding: "1rem", marginBottom: "1rem" },
+  contentText: { padding: "1rem" }
 })
+
