@@ -79,6 +79,6 @@ const styles = StyleSheet.create({
   container: { width: "50% ", marginLeft: "auto", marginRight: "auto" },
   heading: { fontSize: "2rem", marginTop: "1rem", marginBottom: "1rem" },
   input: { borderColor: "#000", borderWidth: "0.2rem", padding: "1rem", marginBottom: "1rem" },
-  contentText: { padding: "1rem" }
+  contentText: { marginBottom: "1rem" }
 })
 
