@@ -33,7 +33,7 @@ export default function Home() {
     <Text style={styles.heading}>PI Digits - Game</Text>
     <Text style={styles.contentText}>Who holds the current world record for reciting pi?
       In 1981, an Indian man named Rajan Mahadevan accurately recited 31,811 digits of pi from memory.
-      In 1989, Japan's Hideaki Tomoyori recited 40,000 digits. The current Guinness World Record is held by Lu Chao of China, who, in 2005, recited 67,890 digits of pi.</Text>
+      In 1989, Japan&apos;s Hideaki Tomoyori recited 40,000 digits. The current Guinness World Record is held by Lu Chao of China, who, in 2005, recited 67,890 digits of pi.</Text>
 
     <TextInput
       value={name} placeholder="Enter Player Name" onChangeText={(text) => setName(text)}
